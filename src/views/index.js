@@ -11,7 +11,7 @@ import { useEffect, useState } from "react";
 import ImageCard from "../components/imageCard";
 
 const DashBoard = () => {
-  const server = ``;
+  const server = `https://oopsiarted.onrender.com`;
   // const imageList = [
   //   {
   //     title: "Image 1",
@@ -25,11 +25,17 @@ const DashBoard = () => {
   //   { title: "Image 3", image: "https://picsum.photos/200" },
   // ];
   const [imageList, setImageList] = useState([]);
+  async function fetchd() {
+    const config = {
+      withCredentials: true,
+    };
+    let data = await axios.get(`${server}/getpost`, config);
+    console.log(data.data.posts);
+    setImageList(data.data.posts);
+  }
   useEffect(() => {
-    let data = axios.get(`${server}/getpost`);
-    console.log(data);
-    setImageList(data.posts);
-  }, [setImageList, server]);
+    fetchd();
+  }, []);
   const gridSpacing = "15px";
   return { imageList } ? (
     <Box sx={{ m: "10px" }}>
