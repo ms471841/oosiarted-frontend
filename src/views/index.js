@@ -5,6 +5,7 @@ import {
   CardContent,
   Typography,
   Grid,
+  List,
 } from "@mui/material";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -38,16 +39,15 @@ const DashBoard = () => {
   }, []);
   const gridSpacing = "15px";
   return { imageList } ? (
-    <Box sx={{ m: "10px" }}>
+    <Box sx={{ m: "50px" }}>
       <Grid container spacing={gridSpacing}>
         <Grid item xs={12}>
           <Grid container spacing={gridSpacing}>
-            {imageList &&
-              imageList.map((item, index) => (
-                <Grid item lg={3} md={4} sm={6} xs={12}>
-                  <ImageCard title={item.title} imageUrl={item.url} />
-                </Grid>
-              ))}
+            {imageList.map((item, index) => (
+              <Grid item lg={3} md={4} sm={6} xs={12}>
+                <ImageCard key={index} title={item.title} imageUrl={item.url} />
+              </Grid>
+            ))}
           </Grid>
         </Grid>
       </Grid>
