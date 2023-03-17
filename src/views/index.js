@@ -45,7 +45,7 @@ const DashBoard = () => {
             {imageList &&
               imageList.map((item, index) => (
                 <Grid item lg={3} md={4} sm={6} xs={12}>
-                  <ImageCard title={item.title} imageUrl={item.imageUrl} />
+                  <ImageCard title={item.title} imageUrl={item.url} />
                 </Grid>
               ))}
           </Grid>
