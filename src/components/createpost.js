@@ -1,4 +1,4 @@
-import react, { useState } from "react";
+import { useState } from "react";
 import {
   Box,
   Card,
@@ -44,10 +44,10 @@ const CreatePost = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        mt: 30,
+        mt: 15,
       }}
     >
-      <Card>
+      <Card sx={{ height: "500px" }}>
         <CardContent>
           <Typography sx={{ fontWeight: "bold" }}>Create Post</Typography>
           <br />
@@ -71,7 +71,9 @@ const CreatePost = () => {
             <br />
             <br />
 
-            <button type="submit">Submit</button>
+            <button fullWidth type="submit">
+              Submit
+            </button>
           </form>
         </CardContent>
       </Card>

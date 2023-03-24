@@ -7,24 +7,15 @@ import {
   Grid,
   List,
 } from "@mui/material";
+
 import axios from "axios";
 import { useEffect, useState } from "react";
 import ImageCard from "../components/imageCard";
 
 const DashBoard = () => {
   const server = `https://oopsiarted.onrender.com`;
-  // const imageList = [
-  //   {
-  //     title: "Image 1",
-  //     image: "https://picsum.photos/200",
-  //   },
-  //   { title: "Image 2", image: "https://picsum.photos/200" },
-  //   { title: "Image 3", image: "https://picsum.photos/200" },
-  //   { title: "Image 3", image: "https://picsum.photos/200" },
-  //   { title: "Image 3", image: "https://picsum.photos/200" },
-  //   { title: "Image 3", image: "https://picsum.photos/200" },
-  //   { title: "Image 3", image: "https://picsum.photos/200" },
-  // ];
+ 
+  
   const [imageList, setImageList] = useState([]);
   async function fetchd() {
     const config = {
@@ -45,7 +36,7 @@ const DashBoard = () => {
           <Grid container spacing={gridSpacing}>
             {imageList.map((item, index) => (
               <Grid item lg={3} md={4} sm={6} xs={12}>
-                <ImageCard key={index} title={item.title} imageUrl={item.url} />
+                <ImageCard  key={index} title={item.title} imageUrl={item.url} />
               </Grid>
             ))}
           </Grid>
@@ -53,7 +44,7 @@ const DashBoard = () => {
       </Grid>
     </Box>
   ) : (
-    <h1>Loading...</h1>
+    <h1>UYGFDUVFDL</h1>
   );
 };
 
